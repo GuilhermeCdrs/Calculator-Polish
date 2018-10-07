@@ -41,10 +41,28 @@ public class ProgMain {
 
             } else if (x.equals("+")) {
 
-            } else if (!x.equals("sair")) {
+            } else if (!x.equals("finish")) {
                 
             }
         } while (!x.equals("finish"));
     }
+    // Function
+    public static void func(String operacao) {
+        
+    }
     
+    public static void operando() {
+        // If the size of the ArrayList is equal to 0 or 1 it can not receive signal
+        switch (test.size()) {
+            case 0:
+                JOptionPane.showMessageDialog(null, "The first element can not be a signal!");
+                break;
+            case 1:
+                JOptionPane.showMessageDialog(null, "The second element can not be a signal!");
+                break;
+            default: // If not, execute func ()
+                func(x);
+                break;
+        }
+    }
 }
