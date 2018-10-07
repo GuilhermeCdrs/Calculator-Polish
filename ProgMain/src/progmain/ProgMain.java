@@ -48,7 +48,57 @@ public class ProgMain {
     }
     // Function
     public static void func(String operacao) {
-        
+        double pri = test.get(0).getNum(); // First Stack Number
+        double seg = test.get(1).getNum(); // Second Cell Number
+        double result; // Results of Operations
+        if (operacao.equals("+")) {
+            result = seg + pri;
+            Number t = new Number();
+            t.setNum(result);
+            test.add(1, t);
+            // Removing the first two positions of the ArrayList
+            test.remove(0);
+            test.remove(1);
+        }
+        if (operacao.equals("-")) {
+            result = seg - pri;
+            Number t = new Number();
+            t.setNum(result);
+            test.add(1, t);
+            // Removing the first two positions of the ArrayList
+            test.remove(0);
+            test.remove(1);
+        }
+        if (operacao.equals("*")) {
+            result = seg * pri;
+            Number t = new Number();
+            t.setNum(result);
+            test.add(1, t);
+            // Removing the first two positions of the ArrayList
+            test.remove(0);
+            test.remove(1);
+        }
+        if (operacao.equals("/")) {
+            if (pri == 0) { // Division by zero not allowed 
+                JOptionPane.showMessageDialog(null, "Division by zero not allowed!");
+            } else {
+                result = seg / pri;
+                Number t = new Number();
+                t.setNum(result);
+                test.add(1, t);
+                for (int i = 0; i < test.size(); i++) {
+                    System.out.println(test.get(i).getNum() + "\n");
+                }
+                System.out.println("--------------------\n");
+                test.remove(0);
+                test.remove(1);
+            }
+        }
+        // Printing Stack
+        for (int i = 0; i < test.size(); i++) {
+            System.out.println(test.get(i).getNum() + "\n");
+        }
+        System.out.println("--------------------");
     }
     
     public static void operando() {
