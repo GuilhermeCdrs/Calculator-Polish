@@ -34,15 +34,28 @@ public class ProgMain {
             double seg = 0; // Second stack element
             // Checking if the entry is operators  
             if (x.equals("-")) {
-
+                operando();
             } else if (x.equals("*")) {
-
+                operando();
             } else if (x.equals("/")) {
-
+                operando();
             } else if (x.equals("+")) {
-
+                operando();
             } else if (!x.equals("finish")) {
-                
+                try { // If it is not a number it goes into catch and alert error
+                    // Converting String input to Double
+                    double var = Double.parseDouble(x);
+                    Number t = new Number();
+                    t.setNum(var);
+                    test.add(0, t);
+
+                    for (int i = 0; i < test.size(); i++) {
+                        System.out.println(test.get(i).getNum() + "\n");
+                    }
+                    System.out.println("--------------------");
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Attention!! \n nEnter a number or an operation!");
+                }
             }
         } while (!x.equals("finish"));
     }
